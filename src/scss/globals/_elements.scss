@@ -1,0 +1,18 @@
+@import '../partials/variables';
+@import '../partials/mixins';
+
+button {
+  border-radius: 5px;
+  padding: 10px 0;
+  width: 100%;
+  font-family: $Oswald;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $orange;
+  color: $white;
+
+  @include respond-to(tablet) {
+    width: auto;
+    padding: 10px 20px;
+  }
+}

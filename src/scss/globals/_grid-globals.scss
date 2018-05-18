@@ -1,0 +1,114 @@
+/*
+  Need to split this up from _grid,
+  otherwise everytime we include _grid somewhere
+  all the globals get built again
+ */
+
+@import '../partials/grid';
+
+//
+// GLOBAL CSS
+//
+// Add a new one only when you need it. Trying to keep css minimal
+
+//TODO: make sure these are not defined globally anywhere else
+
+:global {
+  .row {
+    @include row();
+  }
+
+  .col1 {
+    @include col(1);
+  }
+
+  .col2 {
+    @include col(2);
+  }
+
+  .col3 {
+    @include col(3);
+  }
+
+  .col4 {
+    @include col(4);
+  }
+
+  .col4x3 {
+    @include col(4 / 3);
+  }
+
+  // globals with media queries
+
+  .col1-tablet {
+    @include respond-to(tablet) {
+      @include col(1);
+    }
+  }
+
+  .col2-tablet {
+    @include respond-to(tablet) {
+      @include col(2);
+    }
+  }
+
+  .col3-tablet {
+    @include respond-to(tablet) {
+      @include col(3);
+    }
+  }
+
+  .col3x2-tablet {
+    @include respond-to(tablet) {
+      @include col(3 / 2);
+    }
+  }
+
+  .col4-tablet {
+    @include respond-to(tablet) {
+      @include col(4);
+    }
+  }
+
+  .col4x3-tablet {
+    @include respond-to(tablet) {
+      @include col(4 / 3);
+    }
+  }
+
+  .col1-desktop {
+    @include respond-to(desktop) {
+      @include col(1);
+    }
+  }
+
+  .col2-desktop {
+    @include respond-to(desktop) {
+      @include col(2);
+    }
+  }
+
+  .col3-desktop {
+    @include respond-to(desktop) {
+      @include col(3);
+    }
+  }
+
+  .col4-desktop {
+    @include respond-to(desktop) {
+      @include col(4);
+    }
+  }
+
+  .col4x3-desktop {
+    @include respond-to(desktop) {
+      @include col(4 / 3);
+    }
+  }
+
+  .col3x2-desktop {
+    @include respond-to(desktop) {
+      @include col(1.5);
+    }
+  }
+}

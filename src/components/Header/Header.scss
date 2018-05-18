@@ -1,0 +1,76 @@
+@import '../../scss/partials/variables';
+@import '../../scss/partials/mixins';
+
+$headerHeight: 50px;
+$headerHeightTablet: 75px;
+$headerHeightDesktop: 85px;
+
+header.header {
+  height: $headerHeight;
+
+  @include respond-to(tablet) {
+    height: $headerHeightTablet;
+  }
+
+  @include respond-to(desktop) {
+    height: $headerHeightDesktop;
+  }
+}
+
+.menuItems {
+  padding-right: 30px;
+
+  @include respond-to(tablet) {
+    padding-right: 40px;
+  }
+
+  @include respond-to(desktop) {
+    padding-right: 50px;
+  }
+
+  .menuItem {
+    float: right;
+    margin-right: 20px;
+    line-height: normal;
+    width: auto;
+    text-align: right;
+
+    @include respond-to(tablet) {
+      line-height: $headerHeightTablet;
+      margin-right: 30px;
+    }
+
+    @include respond-to(desktop) {
+      line-height: $headerHeightDesktop;
+      margin-right: 35px;
+    }
+  }
+
+  .buttonWrapper {
+    float: right;
+
+    @include respond-to(tablet) {
+      line-height: $headerHeightTablet;
+    }
+
+    @include respond-to(desktop) {
+      line-height: $headerHeightDesktop;
+    }
+
+    button {
+      background-color: $green;
+    }
+  }
+}
+
+.logo {
+  h1 {
+    @include respond-to(tablet) {
+      line-height: $headerHeightTablet;
+    }
+
+    @include respond-to(desktop) {
+      line-height: $headerHeightDesktop;
+    }
+  }
+}
