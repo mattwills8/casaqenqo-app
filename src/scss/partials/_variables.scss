@@ -12,11 +12,6 @@ $slate-gray: #58595b;
 $dark-gray: #6d6d6d;
 $silver: #d1d3d4;
 
-/* Global Sizes */
-/* prettier-ignore */
-
-$buttonHeight: 42px;
-
 /* Fonts */
 /* prettier-ignore */
 
@@ -42,3 +37,10 @@ $MobileMaxWidthPX: $MobileMaxWidth + px;
 
 $TabletMaxWidth: 1023;
 $TabletMaxWidthPX: $TabletMaxWidth + px;
+
+:export {
+  mobilemaxwidth: $MobileMaxWidth;
+  tabletmaxwidth: $TabletMaxWidth;
+  mobilemaxwidthpx: $MobileMaxWidthPX;
+  tabletmaxwidthpx: $TabletMaxWidthPX;
+}

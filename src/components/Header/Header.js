@@ -1,16 +1,37 @@
 // @flow
 import * as React from 'react'
+import type { ScreenSize } from '../../lib/contexts/screenSize_context'
+import { withScreenSize } from '../../lib/contexts/screenSize_context'
 import { text } from '../../lib/cq_language'
 import BurgerMenu from '../BurgerMenu/BurgerMenu'
 import style from './Header.scss'
 
-type Props = {}
+type Props = {
+  screenSize: ScreenSize
+}
 
-class Header extends React.Component<Props> {
+type State = {
+  showMenuMobile: boolean
+}
+
+class Header extends React.Component<Props, State> {
+  constructor (props: Props) {
+    super(props)
+
+    this.state = { showMenuMobile: false }
+  }
+
+  burgerOnActive () {
+    this.setState({ showMenuMobile: true })
+  }
+
+  burgerOnInactive () {
+    this.setState({ showMenuMobile: false })
+  }
+
   renderMenuItems () {
     return (
-      <div className={`col2 col4x3-desktop ${style.menuItems}`}>
-        {this.renderDonate()}
+      <React.Fragment>
         <div className={style.menuItem}>
           <h5>{text('News')}</h5>
         </div>
@@ -23,6 +44,21 @@ class Header extends React.Component<Props> {
         <div className={style.menuItem}>
           <h5>{text('Project')}</h5>
         </div>
+      </React.Fragment>
+    )
+  }
+
+  renderMenuItemsMobile () {
+    return <div className={style.menuItemsMobile}>{this.renderMenuItems()}</div>
+  }
+
+  renderBurgerMenu () {
+    return (
+      <div className={style.burgerMenuWrapper}>
+        <BurgerMenu
+          onActive={this.burgerOnActive.bind(this)}
+          onInactive={this.burgerOnInactive.bind(this)}
+        />
       </div>
     )
   }
@@ -38,13 +74,21 @@ class Header extends React.Component<Props> {
   render () {
     return (
       <header className={`row ${style.header}`}>
-        <div className={`col2 col4-desktop ${style.logo}`}>
+        <div className={`col3-tablet col4-desktop ${style.logo}`}>
           <h1>{"Casa Q'enqo"}</h1>
         </div>
-        {this.renderMenuItems()}
+        <div className={`col1 col3x2-tablet col4x3-desktop ${style.menuItems}`}>
+          {this.renderDonate()}
+          {this.props.screenSize === 'mobile'
+            ? this.renderBurgerMenu()
+            : this.renderMenuItems()}
+        </div>
+        {this.props.screenSize === 'mobile' &&
+          this.state.showMenuMobile &&
+          this.renderMenuItemsMobile()}
       </header>
     )
   }
 }
 
-export default Header
+export default withScreenSize(Header)

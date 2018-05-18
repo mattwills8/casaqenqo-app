@@ -5,72 +5,99 @@ $headerHeight: 50px;
 $headerHeightTablet: 75px;
 $headerHeightDesktop: 85px;
 
+%fitHeaderHeight {
+  line-height: $headerHeight;
+
+  @include respond-to(tablet) {
+    line-height: $headerHeightTablet;
+  }
+
+  @include respond-to(desktop) {
+    line-height: $headerHeightDesktop;
+  }
+}
+
 header.header {
+  position: relative;
+  padding: 0 10px;
+  width: 100%;
   height: $headerHeight;
+  box-sizing: border-box;
 
   @include respond-to(tablet) {
     height: $headerHeightTablet;
+    padding: 0 25px;
   }
 
   @include respond-to(desktop) {
     height: $headerHeightDesktop;
-  }
-}
-
-.menuItems {
-  padding-right: 30px;
-
-  @include respond-to(tablet) {
-    padding-right: 40px;
+    padding: 0 30px;
   }
 
-  @include respond-to(desktop) {
-    padding-right: 50px;
-  }
-
-  .menuItem {
-    float: right;
-    margin-right: 20px;
-    line-height: normal;
-    width: auto;
-    text-align: right;
-
-    @include respond-to(tablet) {
-      line-height: $headerHeightTablet;
-      margin-right: 30px;
+  .menuItems {
+    @include respond-to-max(tablet) {
+      float: right !important;
     }
 
-    @include respond-to(desktop) {
-      line-height: $headerHeightDesktop;
-      margin-right: 35px;
-    }
-  }
-
-  .buttonWrapper {
-    float: right;
-
-    @include respond-to(tablet) {
-      line-height: $headerHeightTablet;
+    .menuItem {
+      @extend %fitHeaderHeight;
+      float: right;
+      margin-right: 20px;
+      width: auto;
+      text-align: right;
     }
 
-    @include respond-to(desktop) {
-      line-height: $headerHeightDesktop;
+    .buttonWrapper {
+      @extend %fitHeaderHeight;
+      float: right;
+
+      button {
+        padding: 10px 20px;
+        background-color: $green;
+      }
     }
 
-    button {
-      background-color: $green;
+    .burgerMenuWrapper {
+      @extend %fitHeaderHeight;
+      float: right;
+      padding: 0 20px;
+
+      :global(.hamburger-box) {
+        height: 10px;
+      }
     }
   }
-}
 
-.logo {
-  h1 {
-    @include respond-to(tablet) {
-      line-height: $headerHeightTablet;
+  .menuItemsMobile {
+    position: absolute;
+    background-color: $light-gray;
+    left: 0;
+    top: $headerHeight;
+    z-index: 100;
+    width: 100%;
+
+    .menuItem {
+      padding: 10px 0;
+      width: 100%;
+
+      h5 {
+        text-align: center;
+      }
     }
+  }
 
-    @include respond-to(desktop) {
-      line-height: $headerHeightDesktop;
+  .logo {
+    @include respond-to-max(tablet) {
+      position: absolute;
+      left: 0px;
+      top: 50%;
+      padding: 0 10px;
+      width: 100%;
+      transform: translateY(-50%);
+      box-sizing: border-box;
+    }
+    h1 {
+      @extend %fitHeaderHeight;
     }
   }
 }

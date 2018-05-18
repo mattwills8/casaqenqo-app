@@ -3,7 +3,6 @@ import * as React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Loadable from 'react-loadable'
 import Loading from '../Loading/Loading'
-import Header from '../Header/Header'
 
 const HomeLoadable = Loadable({
   loader: () => import('../../Pages/Home/Home'),
