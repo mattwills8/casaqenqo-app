@@ -1,5 +1,6 @@
 @import '../../scss/partials/variables';
 @import '../../scss/partials/mixins';
+@import '../../scss/partials/helpers';
 
 $headerHeight: 50px;
 $headerHeightTablet: 75px;
@@ -18,9 +19,9 @@ $headerHeightDesktop: 85px;
 }
 
 header.header {
+  @extend %bodyPadding;
   position: fixed;
   z-index: 100;
-  padding: 0 10px;
   width: 100%;
   height: $headerHeight;
   box-sizing: border-box;
@@ -89,11 +90,11 @@ header.header {
   }
 
   .logo {
+    @extend %bodyPadding;
     @include respond-to-max(tablet) {
       position: absolute;
       left: 0px;
       top: 50%;
-      padding: 0 10px;
       width: 100%;
       transform: translateY(-50%);
       box-sizing: border-box;

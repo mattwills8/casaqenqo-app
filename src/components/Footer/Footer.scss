@@ -1,0 +1,50 @@
+@import '../../scss/partials/variables';
+@import '../../scss/partials/mixins';
+@import '../../scss/partials/helpers';
+
+$footerHeightTablet: 100px;
+$footerHeightDesktop: 120px;
+
+%fitFooterHeight {
+  @include respond-to(tablet) {
+    line-height: $footerHeightTablet;
+  }
+  @include respond-to(desktop) {
+    line-height: $footerHeightDesktop;
+  }
+}
+
+footer.footer {
+  @extend %bodyPadding;
+  width: 100%;
+  height: auto;
+  background-color: $purple;
+  text-align: center;
+  box-sizing: border-box;
+
+  @include respond-to(tablet) {
+    height: $footerHeightTablet;
+  }
+
+  .menuItems {
+    width: 100%;
+
+    .menuItem {
+      @extend %fitFooterHeight;
+      float: left;
+      padding: 10px 0;
+      width: 100%;
+
+      @include respond-to(tablet) {
+        width: auto;
+        margin-right: 20px;
+        padding: 0;
+      }
+
+      h5 {
+        text-align: center;
+        color: $white;
+      }
+    }
+  }
+}
