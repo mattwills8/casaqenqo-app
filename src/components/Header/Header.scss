@@ -18,11 +18,13 @@ $headerHeightDesktop: 85px;
 }
 
 header.header {
-  position: relative;
+  position: fixed;
+  z-index: 100;
   padding: 0 10px;
   width: 100%;
   height: $headerHeight;
   box-sizing: border-box;
+  background-color: $white;
 
   @include respond-to(tablet) {
     height: $headerHeightTablet;

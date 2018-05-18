@@ -5,7 +5,7 @@ $black: #000000;
 $white: #fff;
 $green: #6c9161;
 $purple: #4b3b47;
-$orange: #4b3b47;
+$orange: #c6705f;
 $light-gray: #f1f2f2;
 $gray: #a7a9ac;
 $slate-gray: #58595b;
@@ -43,4 +43,7 @@ $TabletMaxWidthPX: $TabletMaxWidth + px;
   tabletmaxwidth: $TabletMaxWidth;
   mobilemaxwidthpx: $MobileMaxWidthPX;
   tabletmaxwidthpx: $TabletMaxWidthPX;
+  green: $green;
+  purple: $purple;
+  orange: $orange;
 }
