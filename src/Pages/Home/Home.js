@@ -5,7 +5,7 @@ type Props = {}
 
 class Home extends React.Component<Props> {
   render () {
-    return <div>{'Home'}</div>
+    return <h1>{'Home'}</h1>
   }
 }
 
