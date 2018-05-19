@@ -84,7 +84,9 @@ class Header extends React.Component<Props, State> {
     return (
       <header className={`row ${style.header}`}>
         <div className={`col3-tablet col4-desktop ${style.logo}`}>
-          <h1>{"Casa Q'enqo"}</h1>
+          <Link to="/">
+            <h1>{"Casa Q'enqo"}</h1>
+          </Link>
         </div>
         <div className={`col1 ${style.menuItems}`}>
           {this.renderDonate()}

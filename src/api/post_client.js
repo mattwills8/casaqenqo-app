@@ -13,7 +13,15 @@ class PostApiClient {
     slug?: string | Array<string>
   ) {
     const url = `${api.baseURL}posts`
-    const params = { page, per_page, search, exclude, include, offset, slug }
+    const params = {
+      page,
+      per_page,
+      search,
+      exclude,
+      include,
+      offset,
+      slug
+    }
 
     return axios.get(url, { params })
   }

@@ -43,23 +43,24 @@ class CustomPage extends React.Component<Props, State> {
     if (this.state.loading || !this.state.page) {
       return <Loading />
     }
-
     return (
       <React.Fragment>
         <Hero
           title={this.state.page.title && this.state.page.title.rendered}
           copy={this.state.page.excerpt.rendered || ''}
-          imgSrc={
-            'http://localhost/casaqenqo/wp-content/uploads/2018/05/IMG_1316.jpg'
+          imgSrc={this.state.page['featured-image'] || ''}
+          overlay={
+            (this.state.page['post-meta-fields']['page_overlay'] &&
+              this.state.page['post-meta-fields']['page_overlay'][0]) ||
+            green
           }
-          overlay={green}
         />
         <PageSection
           contentWidth={'1'}
           renderContent={() => {
             return (
               <div className={style.content}>
-                {ReactHtmlParser(this.state.page.content.rendered)}
+                {ReactHtmlParser(this.state.page.content.rendered || '')}
               </div>
             )
           }}

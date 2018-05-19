@@ -27,6 +27,11 @@ header.header {
   box-sizing: border-box;
   background-color: $white;
 
+  // animat in
+  top: -$headerHeightDesktop;
+  animation: dropdown 0.3s forwards;
+  animation-delay: 4s;
+
   @include respond-to(tablet) {
     height: $headerHeightTablet;
     padding: 0 25px;
@@ -94,12 +99,20 @@ header.header {
 
   .logo {
     @extend %bodyPadding;
-    padding-left: $MobileBodyPadding;
     position: absolute;
     left: 0px;
     top: 50%;
     width: 100%;
     transform: translateY(-50%);
     box-sizing: border-box;
+  }
+}
+
+@keyframes dropdown {
+  from {
+    top: -$headerHeightDesktop;
+  }
+  to {
+    top: 0;
   }
 }
