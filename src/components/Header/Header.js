@@ -77,7 +77,7 @@ class Header extends React.Component<Props, State> {
         <div className={`col3-tablet col4-desktop ${style.logo}`}>
           <h1>{"Casa Q'enqo"}</h1>
         </div>
-        <div className={`col1 col3x2-tablet col4x3-desktop ${style.menuItems}`}>
+        <div className={`col1 ${style.menuItems}`}>
           {this.renderDonate()}
           {this.props.screenSize === 'mobile'
             ? this.renderBurgerMenu()

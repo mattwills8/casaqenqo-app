@@ -7,7 +7,7 @@ type Props = {
   /**
    * The whole image src as a string
    */
-  imageSrc: string,
+  imageSrc?: string,
   /**
    * The name of the colour to use, as named in the styleguide. Colour must exists in the styleguide
    */

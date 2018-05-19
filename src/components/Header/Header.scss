@@ -63,7 +63,7 @@ header.header {
     .burgerMenuWrapper {
       @extend %fitHeaderHeight;
       float: right;
-      padding: 0 20px;
+      padding: 0 10px;
 
       :global(.hamburger-box) {
         height: 10px;
@@ -91,16 +91,12 @@ header.header {
 
   .logo {
     @extend %bodyPadding;
-    @include respond-to-max(tablet) {
-      position: absolute;
-      left: 0px;
-      top: 50%;
-      width: 100%;
-      transform: translateY(-50%);
-      box-sizing: border-box;
-    }
-    h1 {
-      @extend %fitHeaderHeight;
-    }
+    padding-left: $MobileBodyPadding;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
   }
 }
