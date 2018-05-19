@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import { text } from '../../lib/cq_language'
 import PageSection from '../PageSection/PageSection'
 import Underline from '../Underline/Underline'
@@ -13,16 +14,24 @@ class Footer extends React.Component<Props> {
     return (
       <div className={style.menuItems}>
         <div className={style.menuItem}>
-          <h5>{text('News')}</h5>
+          <Link to="/news">
+            <h5>{text('News')}</h5>
+          </Link>
         </div>
         <div className={style.menuItem}>
-          <h5>{text('Casa')}</h5>
+          <Link to="/casa">
+            <h5>{text('Casa')}</h5>
+          </Link>
         </div>
         <div className={style.menuItem}>
-          <h5>{text('Services')}</h5>
+          <Link to="/services">
+            <h5>{text('Services')}</h5>
+          </Link>
         </div>
         <div className={style.menuItem}>
-          <h5>{text('Project')}</h5>
+          <Link to="/project">
+            <h5>{text('Project')}</h5>
+          </Link>
         </div>
       </div>
     )

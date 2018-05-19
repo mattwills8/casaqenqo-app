@@ -4,7 +4,7 @@ import Background from '../Background/Background'
 import style from './PageSection.scss'
 
 type Props = {
-  alignment: 'left' | 'right',
+  alignment?: 'left' | 'right',
   imgSrc?: string,
   overlay: string,
   contentWidth?: '1' | '2' | '3' | '4',

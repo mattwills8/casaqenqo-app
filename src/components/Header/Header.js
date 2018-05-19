@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react'
 import type { ScreenSize } from '../../lib/contexts/screenSize_context'
+import { Link } from 'react-router-dom'
 import { withScreenSize } from '../../lib/contexts/screenSize_context'
 import { text } from '../../lib/cq_language'
 import BurgerMenu from '../BurgerMenu/BurgerMenu'
@@ -33,16 +34,24 @@ class Header extends React.Component<Props, State> {
     return (
       <React.Fragment>
         <div className={style.menuItem}>
-          <h5>{text('News')}</h5>
+          <Link to="/news">
+            <h5>{text('News')}</h5>
+          </Link>
         </div>
         <div className={style.menuItem}>
-          <h5>{text('Casa')}</h5>
+          <Link to="/casa">
+            <h5>{text('Casa')}</h5>
+          </Link>
         </div>
         <div className={style.menuItem}>
-          <h5>{text('Services')}</h5>
+          <Link to="/services">
+            <h5>{text('Services')}</h5>
+          </Link>
         </div>
         <div className={style.menuItem}>
-          <h5>{text('Project')}</h5>
+          <Link to="/project">
+            <h5>{text('Project')}</h5>
+          </Link>
         </div>
       </React.Fragment>
     )

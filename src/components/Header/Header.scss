@@ -42,12 +42,15 @@ header.header {
       float: right !important;
     }
 
-    .menuItem {
+    .menuItem a {
       @extend %fitHeaderHeight;
       float: right;
+      position: relative;
+      z-index: 101;
       margin-right: 20px;
       width: auto;
       text-align: right;
+      color: $dark-gray;
     }
 
     .buttonWrapper {

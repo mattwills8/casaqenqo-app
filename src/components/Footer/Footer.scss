@@ -29,8 +29,10 @@ footer.footer {
   .menuItems {
     width: 100%;
 
-    .menuItem {
+    .menuItem a {
       @extend %fitFooterHeight;
+      position: relative;
+      z-index: 101;
       float: left;
       padding: 10px 0;
       width: 100%;

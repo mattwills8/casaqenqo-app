@@ -40,7 +40,6 @@ class Home extends React.Component<Props> {
           }}
         />
         <PageSection
-          alignment={'right'}
           overlay={white}
           contentWidth={'1'}
           renderContent={() => {
@@ -67,6 +66,21 @@ class Home extends React.Component<Props> {
               <div className={style.section1}>
                 <h2>The Casa</h2>
                 <Underline style={{ width: '65%' }} align={'left'} />
+                <div>
+                  {'Some explanation hre of whats happening Lorem Ipsum Dolor'}
+                </div>
+              </div>
+            )
+          }}
+        />
+        <PageSection
+          overlay={white}
+          contentWidth={'1'}
+          renderContent={() => {
+            return (
+              <div className={style.section2}>
+                <h2>Latest News</h2>
+                <Underline style={{ width: '50%' }} />
                 <div>
                   {'Some explanation hre of whats happening Lorem Ipsum Dolor'}
                 </div>
