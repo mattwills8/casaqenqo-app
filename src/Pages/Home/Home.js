@@ -3,6 +3,7 @@ import * as React from 'react'
 import Hero from '../../components/Hero/Hero'
 import PageSection from '../../components/PageSection/PageSection'
 import { green, lightgray, white } from '../../scss/partials/_variables.scss'
+import Underline from '../../components/Underline/Underline'
 import style from './Home.scss'
 
 type Props = {}
@@ -30,6 +31,7 @@ class Home extends React.Component<Props> {
             return (
               <div className={style.section1}>
                 <h2>The Project</h2>
+                <Underline style={{ width: '65%' }} align={'left'} />
                 <div>
                   {'Some explanation hre of whats happening Lorem Ipsum Dolor'}
                 </div>
@@ -45,6 +47,7 @@ class Home extends React.Component<Props> {
             return (
               <div className={style.section2}>
                 <h2>Services</h2>
+                <Underline style={{ width: '50%' }} />
                 <div>
                   {'Some explanation hre of whats happening Lorem Ipsum Dolor'}
                 </div>
@@ -63,6 +66,7 @@ class Home extends React.Component<Props> {
             return (
               <div className={style.section1}>
                 <h2>The Casa</h2>
+                <Underline style={{ width: '65%' }} align={'left'} />
                 <div>
                   {'Some explanation hre of whats happening Lorem Ipsum Dolor'}
                 </div>

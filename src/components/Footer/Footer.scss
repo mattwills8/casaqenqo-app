@@ -48,3 +48,52 @@ footer.footer {
     }
   }
 }
+
+.donate {
+  width: 100%;
+  text-align: center;
+
+  h4.copy {
+    margin-bottom: 20px;
+
+    @include respond-to(tablet) {
+      margin-bottom: 30px;
+    }
+
+    @include respond-to(desktop) {
+      margin-bottom: 35px;
+    }
+  }
+
+  .donateBox {
+    padding-bottom: 20px;
+
+    @include respond-to(tablet) {
+      padding: 30px;
+    }
+
+    @include respond-to(desktop) {
+      padding: 35px;
+    }
+
+    .donateBoxInner {
+      padding: 10px;
+      min-height: 200px;
+      background-color: $white;
+
+      @include respond-to(tablet) {
+        padding: 20px;
+        min-height: 400px;
+      }
+
+      @include respond-to(desktop) {
+        padding: 25px;
+        min-height: 500px;
+      }
+    }
+  }
+}
+
+.white {
+  color: $white;
+}

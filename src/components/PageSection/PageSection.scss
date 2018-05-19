@@ -1,6 +1,22 @@
+@import '../../scss/partials/helpers';
+@import '../../scss/partials/mixins';
+
 .PageSection {
+  @extend %bodyPadding;
   position: relative;
   z-index: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @include respond-to(tablet) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @include respond-to(desktop) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
   .content {
   }

@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react'
+import Underline from '../Underline/Underline'
 import Background from '../../components/Background/Background'
 import style from './Hero.scss'
 
@@ -135,11 +136,10 @@ class Hero extends React.Component<Props, State> {
 
         <div className={`row ${style.hero}`}>
           {this.renderTitle(shouldRender.title)}
-          <div
+          <Underline
             style={{
               opacity: this.state.showTitle ? 1 : 0
             }}
-            className={`col1 ${style.underline}`}
           />
           {this.renderCopy(shouldRender.copy)}
         </div>
