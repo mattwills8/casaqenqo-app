@@ -3,7 +3,7 @@ import axios from 'axios'
 import api from './index'
 
 class PostApiClient {
-  getLatest (
+  static getLatest (
     page?: number,
     per_page?: number,
     search?: string,
@@ -18,7 +18,7 @@ class PostApiClient {
     return axios.get(url, { params })
   }
 
-  getBySlug (slug: string) {
+  static getBySlug (slug: string) {
     const url = `${api.baseURL}posts`
     const params = { slug }
 

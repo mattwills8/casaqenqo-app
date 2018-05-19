@@ -85,12 +85,12 @@ footer.footer {
 
       @include respond-to(tablet) {
         padding: 20px;
-        min-height: 400px;
+        min-height: 300px;
       }
 
       @include respond-to(desktop) {
         padding: 25px;
-        min-height: 500px;
+        min-height: 350px;
       }
     }
   }

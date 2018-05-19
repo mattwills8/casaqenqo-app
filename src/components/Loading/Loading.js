@@ -5,7 +5,7 @@ type Props = {}
 
 class Loading extends React.Component<Props> {
   render () {
-    return null
+    return <div style={{ height: '100vh' }} />
   }
 }
 

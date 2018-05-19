@@ -3,7 +3,7 @@ import axios from 'axios'
 import api from './index'
 
 class PageApiClient {
-  getBySlug (slug: string) {
+  static getBySlug (slug: string) {
     const url = `${api.baseURL}pages`
     const params = { slug }
 

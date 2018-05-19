@@ -6,7 +6,7 @@ import style from './PageSection.scss'
 type Props = {
   alignment?: 'left' | 'right',
   imgSrc?: string,
-  overlay: string,
+  overlay?: string,
   contentWidth?: '1' | '2' | '3' | '4',
   renderContent: () => React.Node
 }

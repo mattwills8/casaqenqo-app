@@ -9,6 +9,11 @@ const HomeLoadable = Loadable({
   loading: Loading
 })
 
+const PageLoadable = Loadable({
+  loader: () => import('../../Pages/CustomPage/CustomPage'),
+  loading: Loading
+})
+
 /* const PostLoadable = Loadable({
   loader: () => import('../../Pages/Post/Post'),
   loading: Loading
@@ -20,6 +25,8 @@ const Router = (props: Props) => {
   return (
     <Switch>
       <Route exact path="/" component={HomeLoadable} />
+
+      <Route exact path="/:slug" component={PageLoadable} />
     </Switch>
   )
 }
@@ -41,19 +48,6 @@ const Router = (props: Props) => {
 <Route
   exact
   path="/services"
-  render={() => {
-    return (
-      <React.Fragment>
-        <Header />
-        <RouterInner />
-      </React.Fragment>
-    )
-  }}
-/>
-
-<Route
-  exact
-  path="/:slug"
   render={() => {
     return (
       <React.Fragment>
