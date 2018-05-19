@@ -1,0 +1,82 @@
+/* == WordPress WYSIWYG Editor Styles == */
+
+:global .entry-content :local img {
+  margin: 0 0 1.5em 0;
+}
+:global .alignleft :local,
+img.alignleft {
+  margin-right: 1.5em;
+  display: inline;
+  float: left;
+}
+:global .alignright :local,
+img.alignright {
+  margin-left: 1.5em;
+  display: inline;
+  float: right;
+}
+:global .aligncenter :local,
+img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both;
+}
+:global .alignnone :local,
+img.alignnone {
+  /* not sure about this one */
+}
+:global .wp-caption :local {
+  margin-bottom: 1.5em;
+  text-align: center;
+  padding-top: 5px;
+}
+:global .wp-caption :local img {
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+}
+:global .wp-caption :local p.wp-caption-text {
+  line-height: 1.5;
+  font-size: 10px;
+  margin: 0;
+}
+:global .wp-smiley :local {
+  margin: 0 !important;
+  max-height: 1em;
+}
+:global blockquote.left :local {
+  margin-right: 20px;
+  text-align: right;
+  margin-left: 0;
+  width: 33%;
+  float: left;
+}
+:global blockquote.right :local {
+  margin-left: 20px;
+  text-align: left;
+  margin-right: 0;
+  width: 33%;
+  float: right;
+}
+:global .gallery :local dl {
+}
+:global .gallery :local dt {
+}
+:global .gallery :local dd {
+}
+:global .gallery :local dl a {
+}
+:global .gallery :local dl img {
+}
+:global .gallery-caption :local {
+}
+
+:global .size-full :local {
+}
+:global .size-large :local {
+}
+:global .size-medium :local {
+}
+:global .size-thumbnail :local {
+}
