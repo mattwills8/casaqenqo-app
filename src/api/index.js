@@ -1,5 +1,4 @@
 // @flow
-import axios from 'axios'
 
 type Host = 'http://localhost/casaqenqo'
 

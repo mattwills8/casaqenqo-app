@@ -37,20 +37,12 @@ class Hero extends React.Component<Props, State> {
     this.fadeTextIn()
   }
 
-  componentWillReceiveProps (nextProps: Props) {
-    if (
-      nextProps.title !== this.props.title ||
-      nextProps.copy !== this.props.copy
-    ) {
-      this.resetText()
-    }
-  }
-
   componentDidUpdate (prevProps: Props) {
     if (
       prevProps.title !== this.props.title ||
       prevProps.copy !== this.props.copy
     ) {
+      this.resetText()
       this.fadeTextIn()
     }
   }

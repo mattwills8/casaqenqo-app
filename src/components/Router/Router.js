@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react'
 import { Switch, Route } from 'react-router-dom'
+import ScrollToTop from '../ScrollToTop/ScrollToTop'
 import Loadable from 'react-loadable'
 import Loading from '../Loading/Loading'
 
@@ -23,11 +24,13 @@ type Props = {}
 
 const Router = (props: Props) => {
   return (
-    <Switch>
-      <Route exact path="/" component={HomeLoadable} />
+    <ScrollToTop>
+      <Switch>
+        <Route exact path="/" component={HomeLoadable} />
 
-      <Route exact path="/:slug" component={PageLoadable} />
-    </Switch>
+        <Route exact path="/:slug" component={PageLoadable} />
+      </Switch>
+    </ScrollToTop>
   )
 }
 

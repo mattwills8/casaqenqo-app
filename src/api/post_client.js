@@ -5,7 +5,7 @@ import api from './index'
 class PostApiClient {
   static getLatest (
     page?: number,
-    per_page?: number,
+    perPage?: number,
     search?: string,
     exclude?: Array<number>,
     include?: Array<number>,
@@ -15,7 +15,7 @@ class PostApiClient {
     const url = `${api.baseURL}posts`
     const params = {
       page,
-      per_page,
+      per_page: perPage,
       search,
       exclude,
       include,

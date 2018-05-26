@@ -7,8 +7,7 @@ import PageApiClient from '../../api/page_client'
 import Hero from '../../components/Hero/Hero'
 import Loading from '../../components/Loading/Loading'
 import PageSection from '../../components/PageSection/PageSection'
-import { green, lightgray, white } from '../../scss/partials/_variables.scss'
-import Underline from '../../components/Underline/Underline'
+import { green } from '../../scss/partials/_variables.scss'
 import style from './CustomPage.scss'
 
 type Props = {
