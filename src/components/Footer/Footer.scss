@@ -26,6 +26,10 @@ footer.footer {
     height: $footerHeightTablet;
   }
 
+  @include respond-to(desktop) {
+    height: $footerHeightDesktop;
+  }
+
   .menuItems {
     width: 100%;
 
