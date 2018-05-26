@@ -16,6 +16,7 @@ button {
   text-transform: uppercase;
   background-color: $orange;
   color: $white;
+  cursor: pointer;
 
   @include respond-to(tablet) {
     width: auto;

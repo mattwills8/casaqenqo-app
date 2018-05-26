@@ -46,7 +46,10 @@ type Post = {
   sticky: boolean,
   template: '',
   categories: Array<number>,
-  tags: Array<number>
+  tags: Array<number>,
+  // added manually
+  post_meta_fields: {},
+  featured_image: string | false
 }
 
 type Page = {
@@ -85,7 +88,10 @@ type Page = {
   ping_status: 'open' | 'closed',
   menu_order: number,
   meta: Object,
-  template: ''
+  template: '',
+  // added manually
+  post_meta_fields: {},
+  featured_image: string | false
 }
 
 export type { Post, Page }

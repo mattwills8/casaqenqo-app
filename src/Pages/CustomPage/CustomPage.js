@@ -47,7 +47,7 @@ class CustomPage extends React.Component<Props, State> {
         <Hero
           title={this.state.page.title && this.state.page.title.rendered}
           copy={this.state.page.excerpt.rendered || ''}
-          imgSrc={this.state.page['featured-image'] || ''}
+          imgSrc={this.state.page['featured_image'] || ''}
           overlay={
             (this.state.page['post-meta-fields']['page_overlay'] &&
               this.state.page['post-meta-fields']['page_overlay'][0]) ||

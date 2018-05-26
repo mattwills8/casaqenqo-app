@@ -8,6 +8,7 @@ import {
   white,
   silver
 } from '../../scss/partials/_variables.scss'
+import Posts from '../../components/Posts/Posts'
 import Underline from '../../components/Underline/Underline'
 import style from './Home.scss'
 
@@ -105,9 +106,7 @@ class Home extends React.Component<Props> {
               <div className={style.section2}>
                 <h2>Latest News</h2>
                 <Underline style={{ width: '50%' }} />
-                <div>
-                  {'Some explanation hre of whats happening Lorem Ipsum Dolor'}
-                </div>
+                <Posts numberToShow={3} />
               </div>
             )
           }}

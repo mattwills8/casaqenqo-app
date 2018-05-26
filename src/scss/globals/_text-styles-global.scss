@@ -67,6 +67,7 @@ body {
 
 a {
   @extend %link;
+  cursor: pointer;
 }
 
 :global .small-body :local {
