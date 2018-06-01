@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 import Hero from '../../components/Hero/Hero'
 import PageSection from '../../components/PageSection/PageSection'
 import {
@@ -107,6 +108,11 @@ class Home extends React.Component<Props> {
                 <h2>Latest News</h2>
                 <Underline style={{ width: '50%' }} />
                 <Posts numberToShow={3} />
+                <div className={`col1 ${style.newsShowMoreWrapper}`}>
+                  <Link to="/news">
+                    <button>{'See More'}</button>
+                  </Link>
+                </div>
               </div>
             )
           }}

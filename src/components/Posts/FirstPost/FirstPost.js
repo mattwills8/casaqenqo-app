@@ -1,14 +1,19 @@
 // @flow
 import * as React from 'react'
 import type { Post } from '../../../lib/flow-typed/post_types'
+import type { ScreenSize } from '../../../lib/contexts/screenSize_context'
+import { withScreenSize } from '../../../lib/contexts/screenSize_context'
 import { Link } from 'react-router-dom'
 import { getExcerpt } from '../../../lib/cq_Post'
 import ImageFrame from '../../FixedAspectRatioBox/ImageFrame/ImageFrame'
 import ContentTransformer from '../../ContentTransformer/ContentTransformer'
+import OtherPost from '../OtherPost/OtherPost'
 import style from './FirstPost.scss'
 
 type Props = {
-  post: Post
+  post: Post,
+  // from withScreenSize HOC
+  screenSize: ScreenSize
 }
 
 class FirstPost extends React.Component<Props> {
@@ -18,14 +23,12 @@ class FirstPost extends React.Component<Props> {
     }
 
     return (
-      <div className={style.featuredImage}>
-        <ImageFrame
-          src={this.props.post.featured_image}
-          aspectRatio={60 / 100}
-          aspectRatioTablet={50 / 100}
-          aspectRatioDesktop={40 / 100}
-        />
-      </div>
+      <div
+        style={{
+          backgroundImage: `url('${this.props.post.featured_image}')` || ''
+        }}
+        className={`col2 ${style.featuredImage}`}
+      />
     )
   }
 
@@ -52,19 +55,23 @@ class FirstPost extends React.Component<Props> {
   }
 
   render () {
-    return (
+    return this.props.screenSize === 'mobile' ? (
+      <OtherPost post={this.props.post} />
+    ) : (
       <div className={`col1 ${style.firstPost}`}>
-        <Link to={`/post/${this.props.post.slug}`}>
-          {this.renderImage()}
-          {this.renderTitle()}
-        </Link>
-        {this.renderExcerpt()}
-        <Link to={`/post/${this.props.post.slug}`}>
-          <button>{'READ MORE'}</button>
-        </Link>
+        <Link to={`/post/${this.props.post.slug}`}>{this.renderImage()}</Link>
+
+        <div className={`col1 col2-tablet ${style.contentContainer}`}>
+          <Link to={`/post/${this.props.post.slug}`}>{this.renderTitle()}</Link>
+
+          {this.renderExcerpt()}
+          <Link to={`/post/${this.props.post.slug}`}>
+            <button>{'READ MORE'}</button>
+          </Link>
+        </div>
       </div>
     )
   }
 }
 
-export default FirstPost
+export default withScreenSize(FirstPost)

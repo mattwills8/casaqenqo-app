@@ -4,7 +4,7 @@ import type { Post } from '../../lib/flow-typed/post_types'
 import PostApiClient from '../../api/post_client'
 import Loading from '../../components/Loading/Loading'
 import FirstPost from './FirstPost/FirstPost.js'
-// import OtherPost from './OtherPost/OtherPost.js'
+import OtherPost from './OtherPost/OtherPost.js'
 import style from './Posts.scss'
 
 type Props = {
@@ -36,14 +36,11 @@ class Posts extends React.Component<Props, State> {
     // const firstPost = posts.shift()
 
     return this.state.posts.map((post, index) => {
-      /*
       if (index === 0) {
         return <FirstPost key={index} post={post} />
       } else {
         return <OtherPost key={index} post={post} />
       }
-      */
-      return <FirstPost key={index} post={post} />
     })
   }
 

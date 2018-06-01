@@ -1,4 +1,5 @@
 @import '../../../scss/partials/variables';
+@import '../../../scss/partials/mixins';
 
 .firstPost {
   border: 1px solid $light-gray;
@@ -11,11 +12,17 @@
   box-sizing: border-box;
 
   .featuredImage {
-    margin-bottom: 20px;
-    width: 100%;
+    @include respond-to(tablet) {
+      min-height: 300px;
+      background-position: center;
+      background-size: cover;
+    }
   }
 
-  h3 {
-    text-align: center;
+  .contentContainer {
+    @include respond-to(tablet) {
+      padding: 20px;
+      text-align: left;
+    }
   }
 }
