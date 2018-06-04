@@ -2,6 +2,7 @@
 import * as React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import ScrollToTop from '../ScrollToTop/ScrollToTop'
+import Header from '../Header/Header'
 import Loadable from 'react-loadable'
 import Loading from '../Loading/Loading'
 
@@ -31,11 +32,11 @@ const Router = (props: Props) => {
   return (
     <ScrollToTop>
       <Switch>
-        <Route exact path="/" component={HomeLoadable} />
+        <CQRoute exact path="/" component={HomeLoadable} delayHeader />
 
-        <Route exact path="/news" component={NewsLoadable} />
+        <CQRoute exact path="/news" component={NewsLoadable} />
 
-        <Route exact path="/:slug" component={PageLoadable} />
+        <CQRoute exact path="/:slug" component={PageLoadable} delayHeader />
       </Switch>
     </ScrollToTop>
   )
@@ -68,5 +69,32 @@ const Router = (props: Props) => {
   }}
 />
 */
+
+type CQRouteProps = {
+  delayHeader?: boolean,
+  // react router route props, so far we cant get this from flow typed
+  component?: React$ComponentType<*>,
+  path?: string,
+  exact?: boolean,
+  strict?: boolean
+}
+
+const CQRoute = (props: CQRouteProps) => {
+  const { delayHeader, component, ...routeProps } = props
+  return (
+    <Route
+      {...routeProps}
+      render={renderProps => {
+        return (
+          <React.Fragment>
+            <Header delayHeader={delayHeader} {...renderProps} />
+
+            {props.component && <props.component {...renderProps} />}
+          </React.Fragment>
+        )
+      }}
+    />
+  )
+}
 
 export default Router

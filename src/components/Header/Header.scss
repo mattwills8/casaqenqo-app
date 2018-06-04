@@ -30,7 +30,6 @@ header.header {
   // animat in
   top: -$headerHeightDesktop;
   animation: dropdown 0.3s forwards;
-  animation-delay: 4s;
 
   @include respond-to(tablet) {
     height: $headerHeightTablet;

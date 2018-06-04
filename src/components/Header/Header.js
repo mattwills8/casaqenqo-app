@@ -8,7 +8,8 @@ import BurgerMenu from '../BurgerMenu/BurgerMenu'
 import style from './Header.scss'
 
 type Props = {
-  screenSize: ScreenSize
+  screenSize: ScreenSize,
+  delayHeader?: boolean
 }
 
 type State = {
@@ -82,7 +83,11 @@ class Header extends React.Component<Props, State> {
 
   render () {
     return (
-      <header className={`row ${style.header}`}>
+      <header
+        style={{
+          animationDelay: this.props.delayHeader ? '4s' : '1s'
+        }}
+        className={`row ${style.header}`}>
         <div className={`col3-tablet col4-desktop ${style.logo}`}>
           <Link to="/">
             <h1>{"Casa Q'enqo"}</h1>

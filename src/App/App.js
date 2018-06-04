@@ -36,8 +36,6 @@ class App extends React.Component<Props, State> {
 
                 return (
                   <ScreenSizeProvider value={{ screenSize }}>
-                    <Header />
-
                     <Router />
 
                     <Footer />
