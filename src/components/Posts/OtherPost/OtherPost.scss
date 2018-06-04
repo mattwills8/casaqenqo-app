@@ -1,14 +1,17 @@
 @import '../../../scss/partials/variables';
+@import '../../../scss/partials/mixins';
 
 .otherPostWrapper {
   padding-top: 20px;
 
-  &:first-child {
-    padding-right: 20px;
-  }
+  @include respond-to(tablet) {
+    &:first-child {
+      padding-right: 20px;
+    }
 
-  &:last-child {
-    padding-left: 20px;
+    &:last-child {
+      padding-left: 20px;
+    }
   }
 
   .otherPost {

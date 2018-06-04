@@ -49,8 +49,8 @@ class CustomPage extends React.Component<Props, State> {
           copy={this.state.page.excerpt.rendered || ''}
           imgSrc={this.state.page['featured_image'] || ''}
           overlay={
-            (this.state.page['post-meta-fields']['page_overlay'] &&
-              this.state.page['post-meta-fields']['page_overlay'][0]) ||
+            (this.state.page['post_meta_fields']['page_overlay'] &&
+              this.state.page['post_meta_fields']['page_overlay'][0]) ||
             green
           }
         />

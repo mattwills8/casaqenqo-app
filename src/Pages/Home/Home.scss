@@ -1,3 +1,5 @@
+@import '../../scss/partials/mixins';
+
 .section1 {
   height: 80vh;
 }
@@ -9,4 +11,20 @@
 
 .newsShowMoreWrapper {
   padding: 20px;
+  padding-top: 40px;
+
+  @include respond-to(tablet) {
+    padding-top: 60px;
+  }
+
+  @include respond-to(desktop) {
+    padding-top: 70px;
+  }
+
+  button {
+    @include respond-to(tablet) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
 }
