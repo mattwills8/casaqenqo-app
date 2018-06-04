@@ -116,3 +116,9 @@ header.header {
     top: 0;
   }
 }
+
+:export {
+  headerheight: $headerHeight;
+  headerheighttablet: $headerHeightTablet;
+  headerheightdesktop: $headerHeightDesktop;
+}

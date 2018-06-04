@@ -1,0 +1,15 @@
+@import '../../scss/partials/mixins';
+@import '../../components/Header/Header';
+
+.newsPage {
+  margin-top: $headerHeight;
+  padding: 20px;
+
+  @include respond-to(tablet) {
+    margin-top: $headerHeightTablet;
+  }
+
+  @include respond-to(desktop) {
+    margin-top: $headerHeightDesktop;
+  }
+}

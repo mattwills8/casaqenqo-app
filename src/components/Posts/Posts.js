@@ -2,6 +2,7 @@
 import * as React from 'react'
 import type { Post } from '../../lib/flow-typed/post_types'
 import PostApiClient from '../../api/post_client'
+import { sortIntoRows } from '../../lib/cq_jsx'
 import Loading from '../../components/Loading/Loading'
 import FirstPost from './FirstPost/FirstPost.js'
 import OtherPost from './OtherPost/OtherPost.js'
@@ -32,16 +33,20 @@ class Posts extends React.Component<Props, State> {
       return
     }
 
-    // const posts = [...this.state.posts]
-    // const firstPost = posts.shift()
+    const posts = [...this.state.posts]
+    const firstPost = posts.shift()
 
-    return this.state.posts.map((post, index) => {
-      if (index === 0) {
-        return <FirstPost key={index} post={post} />
-      } else {
-        return <OtherPost key={index} post={post} />
-      }
-    })
+    return (
+      <React.Fragment>
+        <FirstPost post={firstPost} />
+        {sortIntoRows(
+          posts.map((post, index) => {
+            return <OtherPost key={index} post={post} />
+          }),
+          2
+        )}
+      </React.Fragment>
+    )
   }
 
   render () {

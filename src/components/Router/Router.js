@@ -10,6 +10,11 @@ const HomeLoadable = Loadable({
   loading: Loading
 })
 
+const NewsLoadable = Loadable({
+  loader: () => import('../../Pages/News/News'),
+  loading: Loading
+})
+
 const PageLoadable = Loadable({
   loader: () => import('../../Pages/CustomPage/CustomPage'),
   loading: Loading
@@ -27,6 +32,8 @@ const Router = (props: Props) => {
     <ScrollToTop>
       <Switch>
         <Route exact path="/" component={HomeLoadable} />
+
+        <Route exact path="/news" component={NewsLoadable} />
 
         <Route exact path="/:slug" component={PageLoadable} />
       </Switch>

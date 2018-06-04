@@ -57,7 +57,7 @@ class FirstPost extends React.Component<Props> {
     return this.props.screenSize === 'mobile' ? (
       <OtherPost post={this.props.post} />
     ) : (
-      <div className={`col1 ${style.firstPost}`}>
+      <div className={`row ${style.firstPost}`}>
         <Link to={`/post/${this.props.post.slug}`}>{this.renderImage()}</Link>
 
         <div className={`col1 col2-tablet ${style.contentContainer}`}>
