@@ -76,7 +76,7 @@ class CustomPage extends React.Component<Props, State> {
     this.setState({ loading: true })
 
     try {
-      const slug = this.props.match.params.slug
+      const slug = this.props.match.params.slug || ''
       const response = await PageApiClient.getBySlug(slug)
 
       console.log(response)
