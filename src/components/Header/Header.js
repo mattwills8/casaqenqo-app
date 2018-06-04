@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react'
 import type { ScreenSize } from '../../lib/contexts/screenSize_context'
+import type { Match } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { withScreenSize } from '../../lib/contexts/screenSize_context'
 import { text } from '../../lib/cq_language'
@@ -9,7 +10,9 @@ import style from './Header.scss'
 
 type Props = {
   screenSize: ScreenSize,
-  delayHeader?: boolean
+  delayHeader?: boolean,
+  // react router
+  match: Match
 }
 
 type State = {
@@ -23,33 +26,33 @@ class Header extends React.Component<Props, State> {
     this.state = { showMenuMobile: false }
   }
 
-  burgerOnActive () {
-    this.setState({ showMenuMobile: true })
+  static getDerivedStateFromProps () {
+    return { showMenuMobile: false }
   }
 
-  burgerOnInactive () {
-    this.setState({ showMenuMobile: false })
+  toggleActiveMobileMenu () {
+    return this.setState({ showMenuMobile: !this.state.showMenuMobile })
   }
 
   renderMenuItems () {
     return (
       <React.Fragment>
-        <div className={style.menuItem}>
+        <div className={`${style.menuItem} ${this.isMatched('news')}`}>
           <Link to="/news">
             <h5>{text('News')}</h5>
           </Link>
         </div>
-        <div className={style.menuItem}>
+        <div className={`${style.menuItem} ${this.isMatched('casa')}`}>
           <Link to="/casa">
             <h5>{text('Casa')}</h5>
           </Link>
         </div>
-        <div className={style.menuItem}>
+        <div className={`${style.menuItem} ${this.isMatched('services')}`}>
           <Link to="/services">
             <h5>{text('Services')}</h5>
           </Link>
         </div>
-        <div className={style.menuItem}>
+        <div className={`${style.menuItem} ${this.isMatched('project')}`}>
           <Link to="/project">
             <h5>{text('Project')}</h5>
           </Link>
@@ -64,11 +67,10 @@ class Header extends React.Component<Props, State> {
 
   renderBurgerMenu () {
     return (
-      <div className={style.burgerMenuWrapper}>
-        <BurgerMenu
-          onActive={this.burgerOnActive.bind(this)}
-          onInactive={this.burgerOnInactive.bind(this)}
-        />
+      <div
+        onClick={this.toggleActiveMobileMenu.bind(this)}
+        className={style.burgerMenuWrapper}>
+        <BurgerMenu active={this.state.showMenuMobile} />
       </div>
     )
   }
@@ -104,6 +106,19 @@ class Header extends React.Component<Props, State> {
           this.renderMenuItemsMobile()}
       </header>
     )
+  }
+
+  isMatched (route: string): string {
+    const { match } = this.props
+    if (
+      (match.path === '/news' && route === 'news') ||
+      (match.path === '/post/:slug' && route === 'news') ||
+      (match.path === '/services' && route === 'services') ||
+      (match.params.slug && match.params.slug === route)
+    ) {
+      return style.match
+    }
+    return ''
   }
 }
 

@@ -6,15 +6,17 @@ $headerHeight: 50px;
 $headerHeightTablet: 75px;
 $headerHeightDesktop: 85px;
 
+$menuItemsPadding: 20px;
+
 %fitHeaderHeight {
   line-height: $headerHeight;
 
   @include respond-to(tablet) {
-    line-height: $headerHeightTablet;
+    line-height: $headerHeightTablet - $menuItemsPadding * 2;
   }
 
   @include respond-to(desktop) {
-    line-height: $headerHeightDesktop;
+    line-height: $headerHeightDesktop - $menuItemsPadding * 2;
   }
 }
 
@@ -42,19 +44,31 @@ header.header {
   }
 
   .menuItems {
-    @include respond-to-max(tablet) {
-      float: right !important;
+    padding: {
+      top: $menuItemsPadding;
+      bottom: $menuItemsPadding;
     }
 
-    .menuItem a {
-      @extend %fitHeaderHeight;
-      float: right;
-      position: relative;
-      z-index: 101;
-      margin-right: 20px;
-      width: auto;
-      text-align: right;
-      color: $dark-gray;
+    @include respond-to-max(tablet) {
+      float: right !important;
+      padding: 0;
+    }
+
+    .menuItem {
+      a {
+        @extend %fitHeaderHeight;
+        float: right;
+        position: relative;
+        z-index: 101;
+        margin-right: 20px;
+        width: auto;
+        text-align: right;
+        color: $dark-gray;
+      }
+
+      &.match a {
+        border-bottom: 5px solid $green;
+      }
     }
 
     .buttonWrapper {
@@ -87,11 +101,19 @@ header.header {
     width: 100%;
 
     .menuItem {
-      padding: 10px 0;
+      padding: 10px 30%;
       width: 100%;
+      box-sizing: border-box;
 
       h5 {
         text-align: center;
+      }
+
+      &.match {
+        h5 {
+          border-left: 5px solid $green;
+          border-right: 5px solid $green;
+        }
       }
     }
   }

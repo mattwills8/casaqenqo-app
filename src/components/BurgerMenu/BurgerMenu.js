@@ -2,8 +2,9 @@
 import React, { Component } from 'react'
 
 type Props = {
-  onActive: () => void,
-  onInactive: () => void
+  active?: boolean,
+  onActive?: () => void,
+  onInactive?: () => void
 }
 
 type State = {
@@ -24,11 +25,20 @@ class BurgerMenu extends Component<Props, State> {
     }
   }
 
+  static getDerivedStateFromProps (nextProps: Props, prevState: State) {
+    if (nextProps.active !== undefined) {
+      if (nextProps.active !== prevState.isActive) {
+        return { isActive: nextProps.active }
+      }
+    }
+    return null
+  }
+
   handleClick () {
     if (this.state.isActive) {
-      this.props.onInactive()
+      this.props.onInactive && this.props.onInactive()
     } else {
-      this.props.onActive()
+      this.props.onActive && this.props.onActive()
     }
 
     this.setState({ isActive: !this.state.isActive })
