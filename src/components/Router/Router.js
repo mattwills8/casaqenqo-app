@@ -21,10 +21,10 @@ const PageLoadable = Loadable({
   loading: Loading
 })
 
-/* const PostLoadable = Loadable({
-  loader: () => import('../../Pages/Post/Post'),
+const BlogPostLoadable = Loadable({
+  loader: () => import('../../Pages/BlogPost/BlogPost'),
   loading: Loading
-}) */
+})
 
 type Props = {}
 
@@ -35,6 +35,8 @@ const Router = (props: Props) => {
         <CQRoute exact path="/" component={HomeLoadable} delayHeader />
 
         <CQRoute exact path="/news" component={NewsLoadable} />
+
+        <CQRoute exact path="/post/:slug" component={BlogPostLoadable} />
 
         <CQRoute exact path="/:slug" component={PageLoadable} delayHeader />
       </Switch>

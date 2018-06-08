@@ -1,0 +1,70 @@
+@import '../../components/Header/Header';
+@import '../../scss/partials/mixins';
+
+.BlogPost {
+  margin-top: $headerHeight;
+  padding: 5px 20px;
+
+  @include respond-to(tablet) {
+    margin-top: $headerHeightTablet;
+    padding: 10px 30px;
+  }
+
+  @include respond-to(desktop) {
+    margin-top: $headerHeightDesktop;
+  }
+
+  .featuredImage {
+    @include respond-to(tablet) {
+      padding: 0 2%;
+    }
+
+    @include respond-to(tablet) {
+      padding: 0 5%;
+    }
+  }
+
+  .title {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    padding: 0 3%;
+    text-align: center;
+
+    @include respond-to(tablet) {
+      padding: 0 7%;
+    }
+
+    @include respond-to(desktop) {
+      margin-bottom: 50px;
+      padding: 0 10%;
+    }
+
+    .postMeta {
+      margin-top: 10px;
+      border-bottom: 2px solid $orange;
+    }
+  }
+
+  .content {
+    padding: 0 5%;
+
+    @include respond-to(tablet) {
+      padding: 0 12%;
+    }
+
+    @include respond-to(desktop) {
+      padding: 0 17%;
+    }
+
+    img {
+      margin: 10px 0;
+      width: 100%;
+      height: auto;
+
+      @include respond-to(tablet) {
+        margin: 20px 0;
+      }
+    }
+  }
+}
