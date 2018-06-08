@@ -9,7 +9,8 @@ import OtherPost from './OtherPost/OtherPost.js'
 import style from './Posts.scss'
 
 type Props = {
-  numberToShow: number
+  numberToShow: number,
+  addHeaderMargin?: boolean
 }
 
 type State = {
@@ -55,7 +56,14 @@ class Posts extends React.Component<Props, State> {
     if (this.state.loading) {
       return <Loading />
     }
-    return <div className={`row ${style.posts}`}>{this.renderPosts()}</div>
+    return (
+      <div
+        className={`row ${style.posts} ${
+          this.props.addHeaderMargin ? style.addHeaderMargin : ''
+        }`}>
+        {this.renderPosts()}
+      </div>
+    )
   }
 
   async getPosts () {

@@ -8,7 +8,7 @@ type Props = {}
 const News = (props: Props) => {
   return (
     <div className={style.newsPage}>
-      <Posts numberToShow={10} />
+      <Posts numberToShow={10} addHeaderMargin />
     </div>
   )
 }

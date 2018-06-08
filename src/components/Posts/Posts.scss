@@ -1,0 +1,14 @@
+@import '../../scss/partials/mixins';
+@import '../../components/Header/Header';
+
+.addHeaderMargin {
+  margin-top: $headerHeight;
+
+  @include respond-to(tablet) {
+    margin-top: $headerHeightTablet;
+  }
+
+  @include respond-to(desktop) {
+    margin-top: $headerHeightDesktop;
+  }
+}
