@@ -1,0 +1,18 @@
+@import '../../scss/partials/mixins';
+
+.content {
+  padding: 0 3%;
+
+  @include respond-to(tablet) {
+    padding: 0 7%;
+  }
+
+  @include respond-to(desktop) {
+    padding: 0 12%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

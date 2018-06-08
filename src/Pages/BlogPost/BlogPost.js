@@ -96,8 +96,6 @@ class BlogPost extends React.Component<Props, State> {
       const slug = this.props.match.params.slug || ''
       const response = await PostApiClient.getBySlug(slug)
 
-      console.log(response)
-
       this.setState({ post: response.data[0], loading: false })
     } catch (error) {
       console.log(error)
