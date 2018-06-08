@@ -7,7 +7,6 @@ import {
   tabletmaxwidthpx
 } from '../scss/partials/_variables.scss'
 import { ScreenSizeProvider } from '../lib/contexts/screenSize_context'
-import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import Router from '../components/Router/Router'
 
