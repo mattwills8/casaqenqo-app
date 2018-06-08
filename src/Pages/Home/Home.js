@@ -83,18 +83,16 @@ class Home extends React.Component<Props> {
         <PageSection
           alignment={'left'}
           overlay={silver}
-          contentWidth={'2'}
+          contentWidth={'1'}
           imgSrc={
             'http://localhost/casaqenqo/wp-content/uploads/2018/05/DSC_0194-1024x683.jpg'
           }
           renderContent={() => {
             return (
-              <div className={style.section1}>
-                <h2>About Luis</h2>
-                <Underline style={{ width: '65%' }} align={'left'} />
-                <div>
-                  {'Some explanation hre of whats happening Lorem Ipsum Dolor'}
-                </div>
+              <div className={style.section2}>
+                <h2>Learn More</h2>
+                <Underline style={{ width: '65%' }} />
+                <div>{'Will be a video here to explain the project'}</div>
               </div>
             )
           }}
