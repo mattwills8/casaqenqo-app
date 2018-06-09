@@ -36,7 +36,7 @@ class Services extends React.Component<Props, State> {
     }
 
     return this.state.services.map((service, index) => {
-      return <ServiceStyle1 service={service} />
+      return <ServiceStyle1 key={index} service={service} />
     })
   }
 

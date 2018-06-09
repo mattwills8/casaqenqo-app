@@ -74,6 +74,11 @@ class Home extends React.Component<Props> {
                   {'Some caption about the services available at casa qenqo'}
                 </div>
                 <Services numberToShow={3} style={'1'} />
+                <div className={`col1 ${style.showMoreWrapper}`}>
+                  <Link to="/services">
+                    <button>{'See More'}</button>
+                  </Link>
+                </div>
               </div>
             )
           }}
@@ -106,7 +111,7 @@ class Home extends React.Component<Props> {
                 <h2>Latest News</h2>
                 <Underline style={{ width: '50%' }} />
                 <Posts numberToShow={3} />
-                <div className={`col1 ${style.newsShowMoreWrapper}`}>
+                <div className={`col1 ${style.showMoreWrapper}`}>
                   <Link to="/news">
                     <button>{'See More'}</button>
                   </Link>

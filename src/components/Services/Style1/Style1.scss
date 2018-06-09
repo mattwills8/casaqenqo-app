@@ -1,0 +1,89 @@
+@import '../../../scss/partials/mixins';
+@import '../../../scss/partials/variables';
+
+.serviceStyle1 {
+  border-bottom: 1px solid $orange;
+  padding: 20px;
+
+  @include respond-to(tablet) {
+    border-bottom: none;
+  }
+
+  .featuredImageWrapper {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include respond-to(tablet) {
+      margin-bottom: 10px;
+      padding: 0px;
+    }
+
+    @include respond-to(desktop) {
+      padding: 20px;
+    }
+
+    .featuredImage {
+      border: 5px solid $purple;
+      border-radius: 3px;
+    }
+  }
+
+  .title {
+    margin-bottom: 10px;
+
+    @include respond-to(desktop) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .meta {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+
+    @include respond-to(tablet) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    @include respond-to(desktop) {
+      margin-bottom: 15px;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+
+    .metaField {
+      height: 30px;
+      text-align: center;
+
+      .metaWrapper {
+        margin: 0 auto;
+        height: 100%;
+        max-width: 120px;
+
+        h6 {
+          float: left;
+          display: inline-block;
+          line-height: 30px;
+          color: $purple;
+        }
+
+        .icon {
+          float: left;
+          margin-right: 10px;
+          height: 100%;
+          width: auto;
+        }
+      }
+
+      &.duration {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .content {
+  }
+}
