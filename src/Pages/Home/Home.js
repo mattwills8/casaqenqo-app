@@ -12,6 +12,7 @@ import {
 import Posts from '../../components/Posts/Posts'
 import Services from '../../components/Services/Services'
 import Underline from '../../components/Underline/Underline'
+import TitleArea from '../../components/TitleArea/TitleArea'
 import style from './Home.scss'
 
 type Props = {}
@@ -38,8 +39,7 @@ class Home extends React.Component<Props> {
           renderContent={() => {
             return (
               <div className={style.section1}>
-                <h2>Our Mission</h2>
-                <Underline style={{ width: '65%' }} align={'left'} />
+                <TitleArea title={'Our Mission'} align={'left'} />
                 <div>
                   <p>
                     {
@@ -61,9 +61,10 @@ class Home extends React.Component<Props> {
           renderContent={() => {
             return (
               <div className={style.section1}>
-                <h2>The Casa</h2>
-                <Underline style={{ width: '65%' }} align={'left'} />
-                <div>{'Some explanation of the airbnb with link to book'}</div>
+                <TitleArea title={'The Casa'} align={'left'} />
+                <div>
+                  <p>{'Some explanation of the airbnb with link to book'}</p>
+                </div>
               </div>
             )
           }}
@@ -74,8 +75,7 @@ class Home extends React.Component<Props> {
           renderContent={() => {
             return (
               <div className={style.section2}>
-                <h2>Fundraisers</h2>
-                <Underline style={{ width: '50%' }} />
+                <TitleArea title={'Fundraisers'} align={'center'} />
                 <div>
                   {
                     'Explore Peru whilst helping us raise the funds to support homeless children in Cusco'
@@ -83,7 +83,7 @@ class Home extends React.Component<Props> {
                 </div>
                 <Services numberToShow={3} style={'1'} />
                 <div className={`col1 ${style.showMoreWrapper}`}>
-                  <Link to="/services">
+                  <Link to="/fundraisers">
                     <button>{'See More'}</button>
                   </Link>
                 </div>
@@ -101,8 +101,7 @@ class Home extends React.Component<Props> {
           renderContent={() => {
             return (
               <div className={style.section2}>
-                <h2>Learn More</h2>
-                <Underline style={{ width: '65%' }} />
+                <TitleArea title={'Learn More'} align={'center'} />
                 <div>
                   {'Will be an extra video here to explain the project'}
                 </div>
@@ -116,8 +115,7 @@ class Home extends React.Component<Props> {
           renderContent={() => {
             return (
               <div className={style.section2}>
-                <h2>Latest News</h2>
-                <Underline style={{ width: '50%' }} />
+                <TitleArea title={'Latest News'} align={'center'} />
                 <Posts numberToShow={3} />
                 <div className={`col1 ${style.showMoreWrapper}`}>
                   <Link to="/news">
