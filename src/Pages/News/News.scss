@@ -1,3 +1,6 @@
+@import '../../components/Header/Header';
+
 .newsPage {
+  @extend %addHeaderMargin;
   padding: 20px;
 }

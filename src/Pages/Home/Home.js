@@ -75,16 +75,17 @@ class Home extends React.Component<Props> {
           renderContent={() => {
             return (
               <div className={style.section2}>
-                <TitleArea title={'Fundraisers'} align={'center'} />
-                <div>
-                  {
+                <TitleArea
+                  title={'Fundraisers'}
+                  align={'center'}
+                  tagline={
                     'Explore Peru whilst helping us raise the funds to support homeless children in Cusco'
                   }
-                </div>
+                />
                 <Services numberToShow={3} style={'1'} />
                 <div className={`col1 ${style.showMoreWrapper}`}>
                   <Link to="/fundraisers">
-                    <button>{'See More'}</button>
+                    <button>{'Learn More'}</button>
                   </Link>
                 </div>
               </div>

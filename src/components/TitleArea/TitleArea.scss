@@ -1,0 +1,15 @@
+@import '../../scss/partials/mixins';
+
+.titleArea {
+  &.marginBottom {
+    margin-bottom: 10px;
+
+    @include respond-to(tablet) {
+      margin-bottom: 25px;
+    }
+
+    @include respond-to(desktop) {
+      margin-bottom: 40px;
+    }
+  }
+}

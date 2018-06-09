@@ -1,3 +1,6 @@
+@import '../../components/Header/Header';
+
 .ServicesPage {
+  @extend %addHeaderMargin;
   padding: 20px;
 }
