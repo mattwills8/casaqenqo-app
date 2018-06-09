@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import { getExcerpt } from '../../../lib/cq_Post'
 import ImageFrame from '../../FixedAspectRatioBox/ImageFrame/ImageFrame'
 import ContentTransformer from '../../ContentTransformer/ContentTransformer'
+import ContactButton from '../../ContactButton/ContactButton'
 import ServicesStyle1 from '../Style1/Style1'
 import style from './Style2.scss'
 
@@ -74,9 +75,7 @@ class ServiceStyle2 extends React.PureComponent<Props> {
             </div>
           </div>
         )}
-        <Link to={`/service/${this.props.service.slug}`}>
-          <button>{'Learn More'}</button>
-        </Link>
+        <ContactButton />
       </div>
     )
   }

@@ -2,9 +2,11 @@
 import * as React from 'react'
 import type { Post } from '../../../lib/flow-typed/post_types'
 import { Link } from 'react-router-dom'
+import { email } from '../../../api'
 import { getExcerpt } from '../../../lib/cq_Post'
 import ImageFrame from '../../FixedAspectRatioBox/ImageFrame/ImageFrame'
 import ContentTransformer from '../../ContentTransformer/ContentTransformer'
+import ContactButton from '../../ContactButton/ContactButton'
 import style from './Style1.scss'
 
 type Props = {
@@ -98,9 +100,7 @@ class ServiceStyle1 extends React.PureComponent<Props> {
         {this.renderTitle()}
         {this.renderMeta()}
         {this.renderContent()}
-        <Link to={`/service/${this.props.service.slug}`}>
-          <button>{'Learn More'}</button>
-        </Link>
+        <ContactButton />
       </div>
     )
   }
