@@ -20,6 +20,19 @@ $menuItemsPadding: 20px;
   }
 }
 
+// used for pages to add correct margin to top
+%addHeaderMargin {
+  margin-top: $headerHeight;
+
+  @include respond-to(tablet) {
+    margin-top: $headerHeightTablet;
+  }
+
+  @include respond-to(desktop) {
+    margin-top: $headerHeightDesktop;
+  }
+}
+
 header.header {
   @extend %bodyPadding;
   position: fixed;

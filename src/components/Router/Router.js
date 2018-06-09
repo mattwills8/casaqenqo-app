@@ -21,6 +21,11 @@ const NewsLoadable = Loadable({
   loading: Loading
 })
 
+const ServicesLoadable = Loadable({
+  loader: () => import('../../Pages/Services/Services'),
+  loading: Loading
+})
+
 const PageLoadable = Loadable({
   loader: () => import('../../Pages/CustomPage/CustomPage'),
   loading: Loading
@@ -42,6 +47,8 @@ const Router = (props: Props) => {
         <CQRoute exact path="/about" component={AboutLoadable} />
 
         <CQRoute exact path="/news" component={NewsLoadable} />
+
+        <CQRoute exact path="/fundraisers" component={ServicesLoadable} />
 
         <CQRoute exact path="/post/:slug" component={BlogPostLoadable} />
 

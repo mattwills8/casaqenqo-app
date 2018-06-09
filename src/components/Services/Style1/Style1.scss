@@ -26,6 +26,7 @@
 
   .title {
     margin-bottom: 10px;
+    text-align: center;
 
     @include respond-to(desktop) {
       margin-bottom: 15px;

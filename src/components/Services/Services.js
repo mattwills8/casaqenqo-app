@@ -5,7 +5,7 @@ import ServiceApiClient from '../../api/service_client'
 import { sortIntoRows } from '../../lib/cq_jsx'
 import Loading from '../../components/Loading/Loading'
 import ServiceStyle1 from './Style1/Style1.js'
-// import Style2 from './Style2/Style2.js'
+import ServiceStyle2 from './Style2/Style2.js'
 import style from './Services.scss'
 
 type Props = {
@@ -35,9 +35,17 @@ class Services extends React.Component<Props, State> {
       return
     }
 
-    return this.state.services.map((service, index) => {
-      return <ServiceStyle1 key={index} service={service} />
-    })
+    if (this.props.style === '1') {
+      return this.state.services.map((service, index) => {
+        return <ServiceStyle1 key={index} service={service} />
+      })
+    }
+
+    if (this.props.style === '2') {
+      return this.state.services.map((service, index) => {
+        return <ServiceStyle2 key={index} service={service} />
+      })
+    }
   }
 
   render () {
