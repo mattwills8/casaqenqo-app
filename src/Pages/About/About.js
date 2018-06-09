@@ -27,7 +27,7 @@ class AboutPage extends React.Component<Props> {
           </div>
         </Link>
 
-        <Link to="/our-mission">
+        <Link to="/our-story">
           <div
             className={`col1 col2-tablet ${style.heroWrapper} ${
               style.heroRight

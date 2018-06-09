@@ -47,12 +47,12 @@ class Header extends React.Component<Props, State> {
             <h5>{text('Casa')}</h5>
           </Link>
         </div>
-        <div className={`${style.menuItem} ${this.isMatched('services')}`}>
+        <div className={`${style.menuItem} ${this.isMatched('fundraisers')}`}>
           <Link to="/fundraisers">
             <h5>{text('Fundraisers')}</h5>
           </Link>
         </div>
-        <div className={`${style.menuItem} ${this.isMatched('project')}`}>
+        <div className={`${style.menuItem} ${this.isMatched('about')}`}>
           <Link to="/about">
             <h5>{text('About')}</h5>
           </Link>
@@ -113,7 +113,8 @@ class Header extends React.Component<Props, State> {
     if (
       (match.path === '/news' && route === 'news') ||
       (match.path === '/post/:slug' && route === 'news') ||
-      (match.path === '/services' && route === 'services') ||
+      (match.path === '/fundraisers' && route === 'fundraisers') ||
+      (match.path === '/about' && route === 'about') ||
       (match.params.slug && match.params.slug === route)
     ) {
       return style.match

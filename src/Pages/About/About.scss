@@ -49,5 +49,13 @@
         width: 50% !important;
       }
     }
+
+    &.heroRight {
+      // TODO: make sure sentence always breaks
+      :global(.cq-hero) {
+        padding-left: 20%;
+        padding-right: 20%;
+      }
+    }
   }
 }
