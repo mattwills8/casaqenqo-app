@@ -127,7 +127,7 @@ class Hero extends React.Component<Props, State> {
         className={style.heroWrapper}>
         {this.renderHeroBackgroundImage()}
 
-        <div className={`row ${style.hero}`}>
+        <div className={`row ${style.hero} cq-hero`}>
           {this.renderTitle(shouldRender.title)}
           <Underline
             style={{

@@ -1,0 +1,53 @@
+@import '../../scss/partials/variables';
+@import '../../scss/partials/mixins';
+
+.AboutPage {
+  .heroWrapper {
+    &.heroLeft {
+      padding-right: 2px;
+    }
+
+    &.heroRight {
+      padding-left: 2px;
+    }
+
+    @include respond-to-max(tablet) {
+      &.heroLeft {
+        padding-right: 0px;
+      }
+
+      &.heroRight {
+        padding-left: 0px;
+      }
+    }
+
+    &:hover {
+      :global(.hero-headline) {
+        font-size: 50px;
+        transition: all 0.2s;
+
+        @include respond-to(tablet) {
+          font-size: 75px;
+        }
+
+        @include respond-to(desktop) {
+          font-size: 95px;
+        }
+      }
+    }
+
+    :global(.cq-hero) {
+      padding-left: 10%;
+      padding-right: 10%;
+
+      @include respond-to-max(tablet) {
+        padding-top: 20vh;
+        height: 50vh;
+      }
+
+      :global(.underline) {
+        width: 50% !important;
+      }
+    }
+  }
+}
