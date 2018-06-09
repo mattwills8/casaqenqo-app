@@ -10,6 +10,7 @@ import {
   silver
 } from '../../scss/partials/_variables.scss'
 import Posts from '../../components/Posts/Posts'
+import Services from '../../components/Services/Services'
 import Underline from '../../components/Underline/Underline'
 import style from './Home.scss'
 
@@ -21,7 +22,7 @@ class Home extends React.Component<Props> {
       <React.Fragment>
         <Hero
           title={"Casa Q'enqo"}
-          copy={'Help us help homeless children in Cusco'}
+          copy={'Some caption here'}
           imgSrc={
             'http://localhost/casaqenqo/wp-content/uploads/2018/05/30602238_1778785328826315_4105638377313796096_n.jpg'
           }
@@ -39,9 +40,7 @@ class Home extends React.Component<Props> {
               <div className={style.section1}>
                 <h2>The Project</h2>
                 <Underline style={{ width: '65%' }} align={'left'} />
-                <div>
-                  {'Some explanation hre of whats happening Lorem Ipsum Dolor'}
-                </div>
+                <div>{'Some explanation of the project Lorem Ipsum Dolor'}</div>
               </div>
             )
           }}
@@ -58,15 +57,13 @@ class Home extends React.Component<Props> {
               <div className={style.section1}>
                 <h2>The Casa</h2>
                 <Underline style={{ width: '65%' }} align={'left'} />
-                <div>
-                  {'Some explanation hre of whats happening Lorem Ipsum Dolor'}
-                </div>
+                <div>{'Some explanation of the airbnb with link to book'}</div>
               </div>
             )
           }}
         />
         <PageSection
-          overlay={white}
+          overlay={lightgray}
           contentWidth={'1'}
           renderContent={() => {
             return (
@@ -74,8 +71,9 @@ class Home extends React.Component<Props> {
                 <h2>Services</h2>
                 <Underline style={{ width: '50%' }} />
                 <div>
-                  {'Some explanation hre of whats happening Lorem Ipsum Dolor'}
+                  {'Some caption about the services available at casa qenqo'}
                 </div>
+                <Services numberToShow={3} style={'1'} />
               </div>
             )
           }}
@@ -92,7 +90,9 @@ class Home extends React.Component<Props> {
               <div className={style.section2}>
                 <h2>Learn More</h2>
                 <Underline style={{ width: '65%' }} />
-                <div>{'Will be a video here to explain the project'}</div>
+                <div>
+                  {'Will be an extra video here to explain the project'}
+                </div>
               </div>
             )
           }}
