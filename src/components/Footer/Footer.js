@@ -24,8 +24,8 @@ class Footer extends React.Component<Props> {
           </Link>
         </div>
         <div className={style.menuItem}>
-          <Link to="/services">
-            <h5>{text('Services')}</h5>
+          <Link to="/fundraisers">
+            <h5>{text('Fundraisers')}</h5>
           </Link>
         </div>
         <div className={style.menuItem}>

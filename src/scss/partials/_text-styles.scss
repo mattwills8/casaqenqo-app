@@ -157,20 +157,20 @@
 
 %hero-copy-mobile {
   font-family: $Poppins;
-  font-size: 12px;
-  font-style: italic;
+  font-size: 20px;
   line-height: 1.5;
   color: #ffffff;
+  font-style: italic;
 }
 
 %hero-copy-tablet {
   @extend %hero-copy-mobile;
-  font-size: 13px;
+  font-size: 25px;
   line-height: 1.38;
 }
 
 %hero-copy-desktop {
   @extend %hero-copy-tablet;
-  font-size: 16px;
+  font-size: 30px;
   line-height: 1.5;
 }

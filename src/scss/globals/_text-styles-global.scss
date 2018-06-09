@@ -92,12 +92,12 @@ a {
   @extend %hero-copy-mobile;
 
   @include respond-to(tablet) {
-    font-size: 13px;
+    font-size: 25px;
     line-height: 1.38;
   }
 
   @include respond-to(desktop) {
-    font-size: 16px;
+    font-size: 30px;
     line-height: 1.5;
   }
 }

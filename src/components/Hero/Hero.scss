@@ -35,6 +35,12 @@ $fadeInSpeed: 500ms;
     :global(.hero-copy).copy {
       text-align: center;
       transition: opacity $fadeInSpeed;
+
+      :global(.hero-emphasize) {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
     }
 
     :last-child {

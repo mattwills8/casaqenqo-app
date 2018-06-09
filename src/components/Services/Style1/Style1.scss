@@ -22,11 +22,6 @@
     @include respond-to(desktop) {
       padding: 20px;
     }
-
-    .featuredImage {
-      border: 5px solid $purple;
-      border-radius: 3px;
-    }
   }
 
   .title {

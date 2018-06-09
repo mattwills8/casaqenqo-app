@@ -48,13 +48,13 @@ class Header extends React.Component<Props, State> {
           </Link>
         </div>
         <div className={`${style.menuItem} ${this.isMatched('services')}`}>
-          <Link to="/services">
-            <h5>{text('Services')}</h5>
+          <Link to="/fundraisers">
+            <h5>{text('Fundraisers')}</h5>
           </Link>
         </div>
         <div className={`${style.menuItem} ${this.isMatched('project')}`}>
-          <Link to="/project">
-            <h5>{text('Project')}</h5>
+          <Link to="/about">
+            <h5>{text('About')}</h5>
           </Link>
         </div>
       </React.Fragment>

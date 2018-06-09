@@ -22,7 +22,7 @@ class Home extends React.Component<Props> {
       <React.Fragment>
         <Hero
           title={"Casa Q'enqo"}
-          copy={'Some caption here'}
+          copy={'Securing a brighter future for homeless children in Cusco'}
           imgSrc={
             'http://localhost/casaqenqo/wp-content/uploads/2018/05/30602238_1778785328826315_4105638377313796096_n.jpg'
           }
@@ -38,9 +38,15 @@ class Home extends React.Component<Props> {
           renderContent={() => {
             return (
               <div className={style.section1}>
-                <h2>The Project</h2>
+                <h2>Our Mission</h2>
                 <Underline style={{ width: '65%' }} align={'left'} />
-                <div>{'Some explanation of the project Lorem Ipsum Dolor'}</div>
+                <div>
+                  <p>
+                    {
+                      'Last year, 300 children in Cusco didnt have a place to sleep'
+                    }
+                  </p>
+                </div>
               </div>
             )
           }}
@@ -68,10 +74,12 @@ class Home extends React.Component<Props> {
           renderContent={() => {
             return (
               <div className={style.section2}>
-                <h2>Services</h2>
+                <h2>Fundraisers</h2>
                 <Underline style={{ width: '50%' }} />
                 <div>
-                  {'Some caption about the services available at casa qenqo'}
+                  {
+                    'Explore Peru whilst helping us raise the funds to support homeless children in Cusco'
+                  }
                 </div>
                 <Services numberToShow={3} style={'1'} />
                 <div className={`col1 ${style.showMoreWrapper}`}>
