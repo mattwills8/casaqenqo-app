@@ -11,7 +11,6 @@ import {
 } from '../../scss/partials/_variables.scss'
 import Posts from '../../components/Posts/Posts'
 import Services from '../../components/Services/Services'
-import Underline from '../../components/Underline/Underline'
 import TitleArea from '../../components/TitleArea/TitleArea'
 import style from './Home.scss'
 

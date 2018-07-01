@@ -1,8 +1,6 @@
 // @flow
 import * as React from 'react'
 import type { Post } from '../../../lib/flow-typed/post_types'
-import { Link } from 'react-router-dom'
-import { email } from '../../../api'
 import { getExcerpt } from '../../../lib/cq_Post'
 import ImageFrame from '../../FixedAspectRatioBox/ImageFrame/ImageFrame'
 import ContentTransformer from '../../ContentTransformer/ContentTransformer'

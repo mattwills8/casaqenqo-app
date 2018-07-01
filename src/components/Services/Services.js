@@ -2,7 +2,6 @@
 import * as React from 'react'
 import type { Post } from '../../lib/flow-typed/post_types'
 import ServiceApiClient from '../../api/service_client'
-import { sortIntoRows } from '../../lib/cq_jsx'
 import Loading from '../../components/Loading/Loading'
 import ServiceStyle1 from './Style1/Style1.js'
 import ServiceStyle2 from './Style2/Style2.js'
