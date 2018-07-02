@@ -96,7 +96,7 @@ class Header extends React.Component<Props, State> {
           </Link>
         </div>
         <div className={`col1 ${style.menuItems}`}>
-          {this.renderDonate()}
+          {/* this.renderDonate() */}
           {this.props.screenSize === 'mobile'
             ? this.renderBurgerMenu()
             : this.renderMenuItems()}

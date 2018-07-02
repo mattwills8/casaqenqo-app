@@ -40,7 +40,7 @@ class Footer extends React.Component<Props> {
   render () {
     return (
       <div className={style.footerArea}>
-        <PageSection
+        {/* <PageSection
           alignment={'left'}
           overlay={green}
           contentWidth={'1'}
@@ -69,7 +69,7 @@ class Footer extends React.Component<Props> {
               </div>
             )
           }}
-        />
+        /> */}
         <footer className={`row ${style.footer}`}>
           {this.renderFooterMenuItems()}
         </footer>
