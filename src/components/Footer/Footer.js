@@ -2,9 +2,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { text } from '../../lib/cq_language'
-import PageSection from '../PageSection/PageSection'
-import Underline from '../Underline/Underline'
-import { green } from '../../scss/partials/_variables.scss'
 import style from './Footer.scss'
 
 type Props = {}

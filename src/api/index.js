@@ -1,6 +1,6 @@
 // @flow
 
-type Host = 'http://localhost/casaqenqo'
+type Host = 'http://api-casaqenqo-com.stackstaging.com'
 
 type API = {
   host: Host,
@@ -8,7 +8,7 @@ type API = {
   email: string
 }
 
-const host = 'http://localhost/casaqenqo'
+const host = 'http://api-casaqenqo-com.stackstaging.com'
 
 const baseURL = `${host}/index.php/wp-json/wp/v2/`
 

@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+import { host } from '../../api'
 import Hero from '../../components/Hero/Hero'
 import PageSection from '../../components/PageSection/PageSection'
 import {
@@ -23,16 +24,12 @@ class Home extends React.Component<Props> {
         <Hero
           title={"Casa Q'enqo"}
           copy={'Securing a brighter future for homeless children in Cusco'}
-          imgSrc={
-            'http://localhost/casaqenqo/wp-content/uploads/2018/05/30602238_1778785328826315_4105638377313796096_n.jpg'
-          }
+          imgSrc={`${host}/wp-content/uploads/2018/05/30602238_1778785328826315_4105638377313796096_n.jpg`}
           overlay={green}
         />
         <PageSection
           alignment={'left'}
-          imgSrc={
-            'http://localhost/casaqenqo/wp-content/uploads/2018/05/31729856_371738433309886_3474435251755810816_n-e1527308033517.jpg'
-          }
+          imgSrc={`${host}/wp-content/uploads/2018/05/31729856_371738433309886_3474435251755810816_n-e1527308033517.jpg`}
           overlay={lightgray}
           contentWidth={'2'}
           renderContent={() => {
@@ -54,9 +51,7 @@ class Home extends React.Component<Props> {
           alignment={'right'}
           overlay={lightgray}
           contentWidth={'2'}
-          imgSrc={
-            'http://localhost/casaqenqo/wp-content/uploads/2018/05/DSC_0721-2-1024x683.jpg'
-          }
+          imgSrc={`${host}/wp-content/uploads/2018/08/b346941d-b3c3-4c7c-8234-bfabe8f0554d.jpg`}
           renderContent={() => {
             return (
               <div className={style.section1}>
@@ -84,7 +79,7 @@ class Home extends React.Component<Props> {
                 <Services numberToShow={3} style={'1'} />
                 <div className={`col1 ${style.showMoreWrapper}`}>
                   <Link to="/fundraisers">
-                    <button>{'Learn More'}</button>
+                    <button>{'See More'}</button>
                   </Link>
                 </div>
               </div>
@@ -95,9 +90,7 @@ class Home extends React.Component<Props> {
           alignment={'left'}
           overlay={silver}
           contentWidth={'1'}
-          imgSrc={
-            'http://localhost/casaqenqo/wp-content/uploads/2018/05/DSC_0194-1024x683.jpg'
-          }
+          imgSrc={`${host}/wp-content/uploads/2018/05/DSC_0194-1024x683.jpg`}
           renderContent={() => {
             return (
               <div className={style.section2}>
