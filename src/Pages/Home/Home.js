@@ -4,12 +4,7 @@ import { Link } from 'react-router-dom'
 import { host } from '../../api'
 import Hero from '../../components/Hero/Hero'
 import PageSection from '../../components/PageSection/PageSection'
-import {
-  green,
-  lightgray,
-  white,
-  silver
-} from '../../scss/partials/_variables.scss'
+import { green, lightgray, white } from '../../scss/partials/_variables.scss'
 import Posts from '../../components/Posts/Posts'
 import Services from '../../components/Services/Services'
 import TitleArea from '../../components/TitleArea/TitleArea'
@@ -23,7 +18,9 @@ class Home extends React.Component<Props> {
       <React.Fragment>
         <Hero
           title={"Casa Q'enqo"}
-          copy={'Securing a brighter future for homeless children in Cusco'}
+          copy={
+            'Helping homeless children climb towards a better future in Cusco'
+          }
           imgSrc={`${host}/wp-content/uploads/2018/05/30602238_1778785328826315_4105638377313796096_n.jpg`}
           overlay={green}
         />
@@ -39,7 +36,13 @@ class Home extends React.Component<Props> {
                 <div>
                   <p>
                     {
-                      'Last year, 300 children in Cusco didnt have a place to sleep'
+                      'Due to extreme poverty and, in some cases, domestic and sexual abuse, hundreds of children in Cusco are forced to flee their homes and live on the streets every year. Our mission is to change this.'
+                    }
+                  </p>
+                  <p>{'Our mission is to change this.'}</p>
+                  <p>
+                    {
+                      'How? Through climbing! As a community of climbers, we believe that the sport can not only help the mental and physical wellbeing of homeless children in Cusco, but we also think it has the potential to equip them with the right skills to be self-sustainable in the future.'
                     }
                   </p>
                 </div>
@@ -57,7 +60,16 @@ class Home extends React.Component<Props> {
               <div className={style.section1}>
                 <TitleArea title={'The Casa'} align={'left'} />
                 <div>
-                  <p>{'Some explanation of the airbnb with link to book'}</p>
+                  <p>
+                    {
+                      'The Casa - a family home turned Airbnb in the heart of Cusco - is the engine of the Casa Q’enqo project.'
+                    }
+                  </p>
+                  <p>
+                    {
+                      'Set up to help fund our  community climbing initiative, we invite travellers to stay with us in our home, take part in adventure and cultural activities, and get stuck in with our social projects - all whilst being just a stone throw’s away from Cusco’s most popular tourist sites.'
+                    }
+                  </p>
                 </div>
               </div>
             )
@@ -86,6 +98,7 @@ class Home extends React.Component<Props> {
             )
           }}
         />
+        {/*
         <PageSection
           alignment={'left'}
           overlay={silver}
@@ -102,6 +115,7 @@ class Home extends React.Component<Props> {
             )
           }}
         />
+        */}
         <PageSection
           overlay={white}
           contentWidth={'1'}
