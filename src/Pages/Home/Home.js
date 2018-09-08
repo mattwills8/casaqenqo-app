@@ -31,12 +31,12 @@ class Home extends React.Component<Props> {
           contentWidth={'2'}
           renderContent={() => {
             return (
-              <div className={style.section1}>
+              <div className={`${style.section1} ${style.paddingTop}`}>
                 <TitleArea title={'Our Mission'} align={'left'} />
                 <div>
                   <p>
                     {
-                      'Due to extreme poverty and, in some cases, domestic and sexual abuse, hundreds of children in Cusco are forced to flee their homes and live on the streets every year. Our mission is to change this.'
+                      'Due to extreme poverty and, in some cases, domestic and sexual abuse, hundreds of children in Cusco are forced to flee their homes and live on the streets every year.'
                     }
                   </p>
                   <p>{'Our mission is to change this.'}</p>
@@ -49,6 +49,8 @@ class Home extends React.Component<Props> {
               </div>
             )
           }}
+          withGradient
+          gradientLeft
         />
         <PageSection
           alignment={'right'}
@@ -57,7 +59,7 @@ class Home extends React.Component<Props> {
           imgSrc={`${host}/wp-content/uploads/2018/08/b346941d-b3c3-4c7c-8234-bfabe8f0554d.jpg`}
           renderContent={() => {
             return (
-              <div className={style.section1}>
+              <div className={`${style.section1} ${style.paddingTop}`}>
                 <TitleArea title={'The Casa'} align={'left'} />
                 <div>
                   <p>
@@ -74,6 +76,7 @@ class Home extends React.Component<Props> {
               </div>
             )
           }}
+          withGradient
         />
         <PageSection
           overlay={lightgray}

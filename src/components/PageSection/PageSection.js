@@ -8,7 +8,9 @@ type Props = {
   imgSrc?: string,
   overlay?: string,
   contentWidth?: '1' | '2' | '3' | '4',
-  renderContent: () => React.Node
+  renderContent: () => React.Node,
+  withGradient: boolean,
+  gradientLeft: boolean,
 }
 
 class PageSection extends React.Component<Props> {
@@ -21,6 +23,8 @@ class PageSection extends React.Component<Props> {
           imageSrc={this.props.imgSrc}
           customOverlayColor={this.props.overlay}
           imageOpacity={0.33}
+          withGradient={this.props.withGradient}
+          gradientLeft={this.props.gradientLeft}
         />
         <div
           style={{

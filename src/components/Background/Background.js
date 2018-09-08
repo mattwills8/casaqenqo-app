@@ -1,5 +1,7 @@
 // @flow
 import * as React from 'react'
+import type {ScreenSize} from '../../lib/contexts/screenSize_context'
+import {withScreenSize} from '../../lib/contexts/screenSize_context'
 import style from './Background.scss'
 
 type Props = {
@@ -15,7 +17,11 @@ type Props = {
    * Opacity for the image between 0 and 1.
    * Note: The image is on top of the overlay, so 0.2 here would equate to 80% opacity for the overlay.
    */
-  imageOpacity: number
+  imageOpacity: number,
+  withGradient: boolean,
+  gradientLeft: boolean,
+  // from withScreenSize HOC
+  screenSize: ScreenSize
 }
 
 /**
@@ -38,7 +44,7 @@ const Background = (props: Props) => {
     <div>
       <div
         style={{
-          backgroundColor: getOverlay(props)
+          backgroundImage: getOverlay(props)
         }}
         className={style.overlay}
       />
@@ -63,11 +69,17 @@ function getBackgroundStyle (props: Props) {
 }
 
 function getOverlay (props: Props) {
-  if (props.customOverlayColor) {
-    return props.customOverlayColor
-  }
+  const color = props.customOverlayColor ? props.customOverlayColor : '#fff'
 
-  return '#fff'
+  if (props.screenSize === 'mobile') {
+    return `linear-gradient(to right, ${color} , ${color})`
+  } else {
+    if (props.withGradient) {
+      return props.gradientLeft ? `linear-gradient(to right, ${color} , black)` : `linear-gradient(to right, black , ${color})`
+    } else {
+      return `linear-gradient(to right, ${color} , ${color})`
+    }
+  }
 }
 
-export default Background
+export default withScreenSize(Background)
